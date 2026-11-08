@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentor by Harmi</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  color: #243c5b;
+  background:
+    radial-gradient(circle at 10% 10%, #ffffff 0, transparent 35%),
+    linear-gradient(135deg, #eaf5ff, #d9eaff, #f4f8ff);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 7%;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  font-weight: 700;
+  color: #315d91;
+}
+
+.creator {
+  font-size: 12px;
+  color: #6482a5;
+  letter-spacing: 1px;
+}
+
+main {
+  max-width: 850px;
+  margin: 55px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: #6792be;
+  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 7vw, 64px);
+  line-height: 1.15;
+  margin: 18px 0;
+  color: #294c75;
+}
+
+.subtitle {
+  color: #6984a2;
+  line-height: 1.8;
+  font-size: 15px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 35px auto;
+}
+
+.topic {
+  border: 1px solid #c6dbef;
+  background: rgba(255,255,255,.65);
+  color: #41658d;
+  border-radius: 30px;
+  padding: 11px 17px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.topic:hover {
+  background: #d4e8fc;
+  transform: translateY(-2px);
+}
+
+.chat {
+  background: rgba(255,255,255,.76);
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 15px 50px rgba(69,111,158,.10);
+  text-align: left;
+}
+
+.chat-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  margin-bottom: 6px;
+}
+
+.chat-subtitle {
+  font-size: 12px;
+  color: #829bb5;
+  margin-bottom: 20px;
+}
+
+.messages {
+  min-height: 135px;
+  max-height: 340px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 5px 0 15px;
+}
+
+.message {
+  max-width: 85%;
+  padding: 13px 16px;
+  border-radius: 17px;
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.bot {
+  align-self: flex-start;
+  background: #e9f3fd;
+  color: #365b83;
+  border-bottom-left-radius: 5px;
+}
+
+.user {
+  align-self: flex-end;
+  background: #527eac;
+  color: white;
+  border-bottom-right-radius: 5px;
+}
+
+.composer {
+  display: flex;
+  gap: 10px;
+  border: 1px solid #d5e4f2;
+  border-radius: 16px;
+  padding: 7px;
+  background: white;
+}
+
+input {
+  min-width: 0;
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #294c75;
+  background: transparent;
+}
+
+.send {
+  border: none;
+  background: #527eac;
+  color: white;
+  border-radius: 12px;
+  padding: 0 19px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.send:hover { background: #315d91; }
+
+.note {
+  font-size: 11px;
+  color: #829bb5;
+  text-align: center;
+  margin-top: 13px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #829bb5;
+  font-size: 12px;
+}
+
+@media(max-width:600px) {
+  header { padding: 18px 5%; }
+  main { margin: 35px auto; padding: 14px; }
+  .chat { padding: 17px; }
+  .creator { font-size: 10px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Mentor by Harmi</div>
+  <div class="creator">A SPACE FOR YOU ♡</div>
+</header>
+
+<main>
+  <div class="eyebrow">WELCOME TO YOUR SAFE SPACE</div>
+
+  <h1>You deserve a moment<br>to understand yourself.</h1>
+
+  <p class="subtitle">
+    Life can feel overwhelming sometimes.
+    Take a breath, let your thoughts out,
+    and give yourself the space to grow.
+  </p>
+
+  <div class="topics">
+    <button class="topic" onclick="chooseTopic('I'm overthinking everything lately.')">Overthinking</button>
+    <button class="topic" onclick="chooseTopic('I'm struggling with self-doubt.')">Self-doubt</button>
+    <button class="topic" onclick="chooseTopic('I've been feeling anxious and stressed.')">Anxiety & stress</button>
+    <button class="topic" onclick="chooseTopic('I keep comparing myself to others.')">Comparison</button>
+    <button class="topic" onclick="chooseTopic('I need help understanding my relationship.')">Relationships</button>
+    <button class="topic" onclick="chooseTopic('I'm going through heartbreak or grief.')">Heartbreak & grief</button>
+    <button class="topic" onclick="chooseTopic('I feel distracted and unmotivated.')">Motivation</button>
+    <button class="topic" onclick="chooseTopic('I want to work on my personal growth.')">Personal growth</button>
+  </div>
+
+  <section class="chat">
+    <div class="chat-title">Let's talk. ♡</div>
+    <div class="chat-subtitle">A judgment-free space for your thoughts.</div>
+
+    <div class="messages" id="messages">
+      <div class="message bot">
+        Hey, I'm glad you're here. ♡
+
+        You don't have to pretend everything is okay here. Tell me what's on your mind. I'm listening.
+      </div>
+    </div>
+
+    <form class="composer" id="chatForm">
+      <input id="userInput" type="text"
+        placeholder="Tell me what's on your mind..."
+        autocomplete="off" required>
+      <button class="send" type="submit">Send ↗</button>
+    </form>
+
+    <div class="note">
+      Your thoughts matter. Take your time.
+    </div>
+  </section>
+</main>
+
+<footer>
+  Made with care ♡ &nbsp; | &nbsp; By Harmi Vora
+</footer>
+
+<script>
+const messages = document.getElementById('messages');
+const input = document.getElementById('userInput');
+
+function addMessage(text, type) {
+  const message = document.createElement('div');
+  message.className = 'message ' + type;
+  message.textContent = text;
+  messages.appendChild(message);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function chooseTopic(topic) {
+  input.value = topic;
+  input.focus();
+}
+
+document.getElementById('chatForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const text = input.value.trim();
+  if (!text) return;
+
+  addMessage(text, 'user');
+  input.value = '';
+
+  addMessage(
+    "Your AI mentor is being connected. ♡ This preview isn't connected to a live AI yet. Your conversation will work once we finish the secure AI integration.",
+    'bot'
+  );
+});
+</script>
+
+</body>
+</html>
